@@ -25,7 +25,13 @@ app = FastAPI(
 
 @app.on_event("startup")
 async def startup_event():
-    await connect_database()
+    try:
+        await connect_database()
+    except Exception as e:
+        print(f"STARTUP ERROR: {e}")
+        import traceback
+        traceback.print_exc()
+        raise
 
 limiter = Limiter(key_func=get_remote_address, default_limits=["100/15minutes"])
 app.state.limiter = limiter

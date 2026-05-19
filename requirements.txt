@@ -1,0 +1,11 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+motor==3.5.1
+beanie==1.26.0
+python-dotenv==1.0.1
+bcrypt==4.2.1
+python-jose[cryptography]==3.3.0
+groq==0.13.1
+httpx==0.28.1
+slowapi==0.1.9
+pydantic[email]==2.8.2
